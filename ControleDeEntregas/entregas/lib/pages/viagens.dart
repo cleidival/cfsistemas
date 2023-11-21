@@ -1,5 +1,5 @@
-import 'package:entregas/pages/minhas_tarefas.dart';
-import 'package:entregas/pages/tarefas_finalizadas.dart';
+import 'package:entregas/pages/tarefas/minhas_tarefas.dart';
+import 'package:entregas/pages/tarefas/tarefas_finalizadas.dart';
 import 'package:flutter/material.dart';
 
 class Viagens extends StatefulWidget {

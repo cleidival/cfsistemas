@@ -134,7 +134,7 @@ class _MinhasTarefasState extends State<MinhasTarefas> {
               context,
               MaterialPageRoute(
                 builder: (context) => TarefasDetalhes(
-                  tarefaID: index,
+                  tarefa: tarefa,
                 ),
               ),
             );
@@ -158,7 +158,7 @@ class _MinhasTarefasState extends State<MinhasTarefas> {
                 Container(
                   decoration: BoxDecoration(
                     color: tarefa.status == "Iniciada"
-                        ? Color.fromARGB(255, 88, 189, 160)
+                        ? Color.fromARGB(255, 1, 121, 41)
                         : Colors.white,
                     borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(12),
@@ -172,20 +172,49 @@ class _MinhasTarefasState extends State<MinhasTarefas> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('# ${tarefa.id}',
-                          style: const TextStyle(
-                            fontSize: 24,
+                          style: TextStyle(
+                            fontSize: 36,
+                            color: tarefa.status != "Iniciada"
+                                ? Color.fromARGB(255, 1, 121, 41)
+                                : Colors.white,
                             fontWeight: FontWeight.bold,
                           )),
                       Text(
                         '${tarefa.status}',
                         style: const TextStyle(
                           fontSize: 14,
+                          color: Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ],
                   ),
                 ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    padding: EdgeInsets.all(5),
+                    height: 150,
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Sequencia: ${tarefa.id}',
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xff333333),
+                            fontSize: 18,
+                          ),
+                        ),
+                        Text('Nome: ${tarefa.nome}'),
+                        Text('Status: ${tarefa.status}'),
+                      ],
+                    ),
+                  ),
+                )
               ],
             ),
           ),

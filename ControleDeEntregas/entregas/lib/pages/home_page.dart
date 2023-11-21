@@ -1,6 +1,7 @@
 import 'package:entregas/pages/anexos.dart';
 import 'package:entregas/pages/mensagens.dart';
-import 'package:entregas/pages/tarefas_finalizadas.dart';
+import 'package:entregas/pages/cargas/cargas.dart';
+import 'package:entregas/pages/tarefas/tarefas_finalizadas.dart';
 import 'package:flutter/material.dart';
 
 import 'viagens.dart';
@@ -16,6 +17,7 @@ class _HomePageState extends State<HomePage> {
   int _selectedItem = 0;
 
   final List _paginas = [
+    const Cargas(),
     const Viagens(),
     const Mensagens(),
     const Anexos(),
@@ -31,7 +33,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue[300],
+        backgroundColor: Color(0xff1061B1), //s.blue[300],
         title: Row(
           children: [
             const Text(
@@ -85,7 +87,11 @@ class _HomePageState extends State<HomePage> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.local_shipping),
-            label: 'VIAGENS',
+            label: 'CARGAS',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.call_split_sharp),
+            label: 'TAREFAS',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.chat),
@@ -97,7 +103,9 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
         currentIndex: _selectedItem,
-        selectedItemColor: Colors.blue[300],
+        selectedFontSize: 10,
+        selectedItemColor: Color(0xff1061B1),
+        unselectedItemColor: Colors.grey,
         onTap: _onItemTapped,
       ),
     );
