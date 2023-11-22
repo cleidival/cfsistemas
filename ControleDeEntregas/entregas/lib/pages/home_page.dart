@@ -1,4 +1,5 @@
 import 'package:entregas/pages/anexos.dart';
+import 'package:entregas/pages/configuracao.dart';
 import 'package:entregas/pages/mensagens.dart';
 import 'package:entregas/pages/cargas/minhas_cargas.dart';
 import 'package:entregas/pages/tarefas/tarefas_finalizadas.dart';
@@ -72,11 +73,17 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.white,
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 10),
-              child: Icon(
-                Icons.more_vert,
+            Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: IconButton(
+                icon: const Icon(Icons.settings),
                 color: Colors.white,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Configuracao()),
+                  );
+                },
               ),
             ),
           ],

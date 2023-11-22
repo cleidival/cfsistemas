@@ -26,3 +26,5 @@ const String CREATE_TABLES_SCRIPT = """
   );
 
 """;
+
+const String BASE_URL = "http://192.168.2.220:8082/api/v1";
