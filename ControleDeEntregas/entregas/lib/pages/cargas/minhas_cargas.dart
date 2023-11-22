@@ -2,14 +2,14 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 
-class Cargas extends StatefulWidget {
-  const Cargas({super.key});
+class MInhasCargas extends StatefulWidget {
+  const MInhasCargas({super.key});
 
   @override
-  State<Cargas> createState() => _CargasState();
+  State<MInhasCargas> createState() => _MInhasCargasState();
 }
 
-class _CargasState extends State<Cargas> {
+class _MInhasCargasState extends State<MInhasCargas> {
   @override
   Widget build(BuildContext context) {
     return Container(

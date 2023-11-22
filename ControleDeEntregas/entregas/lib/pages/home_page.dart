@@ -1,6 +1,6 @@
 import 'package:entregas/pages/anexos.dart';
 import 'package:entregas/pages/mensagens.dart';
-import 'package:entregas/pages/cargas/cargas.dart';
+import 'package:entregas/pages/cargas/minhas_cargas.dart';
 import 'package:entregas/pages/tarefas/tarefas_finalizadas.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
   int _selectedItem = 0;
 
   final List _paginas = [
-    const Cargas(),
+    const MInhasCargas(),
     const Viagens(),
     const Mensagens(),
     const Anexos(),

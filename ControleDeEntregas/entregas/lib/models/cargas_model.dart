@@ -8,6 +8,10 @@ class Cargas {
   final String? peso_total;
   final String? volume_total;
   final String? motorista;
+  final double? km_inicial;
+  final double? km_final;
+  final DateTime? data_inicial;
+  final DateTime? data_final;
 
   Cargas({
     required this.id,
@@ -17,6 +21,10 @@ class Cargas {
     required this.peso_total,
     required this.volume_total,
     required this.motorista,
+    required this.km_inicial,
+    required this.km_final,
+    required this.data_inicial,
+    required this.data_final,
   });
 
   Map<String, dynamic> toMap() {
@@ -28,6 +36,10 @@ class Cargas {
       'peso_total': peso_total,
       'volume_total': volume_total,
       'motorista': motorista,
+      'km_inicial': km_inicial,
+      'km_final': km_final,
+      'data_inicial': data_inicial,
+      'data_final': data_final
     };
   }
 
@@ -44,6 +56,14 @@ class Cargas {
       volume_total:
           map['volume_total'] != null ? map['volume_total'] as String : null,
       motorista: map['motorista'] != null ? map['motorista'] as String : null,
+      km_inicial: map['km_inicial'] != null ? map['km_inicial'] as double : 0,
+      km_final: map['km_final'] != null ? map['km_final'] as double : 0,
+      data_inicial: map['data_inicial'] != null
+          ? map['data_inicial'] as DateTime
+          : DateTime.now(),
+      data_final: map['data_final'] != null
+          ? map['data_final'] as DateTime
+          : DateTime.now(),
     );
   }
 
