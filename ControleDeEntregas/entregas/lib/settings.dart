@@ -1,5 +1,6 @@
-const String DATABASE_NAME = "entregas.db";
+const String DATABASE_NAME = "DBEentregas.db";
 const String TABLE_CARGAS = "cargas";
+const String TABLE_FUNCIONARIOS = "funcionarios";
 const String TABLE_MOTORISTA = "motorista";
 const String CREATE_TABLES_SCRIPT = """
   CREATE TABLE cargas (

@@ -1,4 +1,6 @@
 import 'package:entregas/pages/anexos.dart';
+import 'package:entregas/pages/barcode/barcodescan.dart';
+import 'package:entregas/pages/camera/camera.dart';
 import 'package:entregas/pages/configuracao.dart';
 import 'package:entregas/pages/mensagens.dart';
 import 'package:entregas/pages/cargas/minhas_cargas.dart';
@@ -59,18 +61,30 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.white,
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
-              child: Icon(
-                Icons.cloud_done_outlined,
+              child: IconButton(
+                icon: const Icon(Icons.qr_code_2_outlined),
                 color: Colors.white,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => BarcodeScanPage()),
+                  );
+                },
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
-              child: Icon(
-                Icons.notifications_outlined,
+              child: IconButton(
+                icon: const Icon(Icons.camera_alt_outlined),
                 color: Colors.white,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CameraPage()),
+                  );
+                },
               ),
             ),
             Padding(

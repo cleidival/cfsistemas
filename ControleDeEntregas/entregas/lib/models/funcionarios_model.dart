@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class Funcionarios {
   int? ordem;
   int? codigo;
@@ -31,24 +29,24 @@ class Funcionarios {
     senha = json['senha'];
     apelido = json['apelido'];
     cargo = json['cargo'];
-    inativo = json['inativo'];
-    superusuario = json['superusuario'];
-    liberado = json['liberado'];
+    inativo = json['inativo'] == 0;
+    superusuario = json['superusuario'] == 0;
+    liberado = json['liberado'] == 1;
     email = json['email'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['ordem'] = this.ordem;
-    data['codigo'] = this.codigo;
-    data['nome'] = this.nome;
-    data['senha'] = this.senha;
-    data['apelido'] = this.apelido;
-    data['cargo'] = this.cargo;
-    data['inativo'] = this.inativo;
-    data['superusuario'] = this.superusuario;
-    data['liberado'] = this.liberado;
-    data['email'] = this.email;
+    var data = <String, dynamic>{};
+    data['ordem'] = ordem;
+    data['codigo'] = codigo;
+    data['nome'] = nome;
+    data['senha'] = senha;
+    data['apelido'] = apelido;
+    data['cargo'] = cargo;
+    data['inativo'] = inativo;
+    data['superusuario'] = superusuario;
+    data['liberado'] = liberado;
+    data['email'] = email;
     return data;
   }
 }

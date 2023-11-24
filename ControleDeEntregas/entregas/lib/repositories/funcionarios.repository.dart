@@ -1,24 +1,22 @@
-import 'dart:convert';
+import 'package:entregas/models/funcionarios_model.dart';
 import 'package:entregas/settings.dart';
-import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+import 'package:sqflite/sqflite.dart';
 
-Future<List<dynamic>> fetchFuncionarios() async {
-  String url = BASE_URL + '/Funcionarios/Lista';
-  //http: //192.168.2.220:8082/api/v1/Funcionarios/Lista
+class FuncionariosProvider {
+  Database? db;
 
-  try {
-    final response = await http.get(Uri.parse(url));
-    print(url);
+  Future open(String path) async {
+    db = await openDatabase(path, version: 1,
+        onCreate: (Database db, int version) async {
+      await db.execute(CREATE_TABLES_SCRIPT);
+    });
+  }
 
-    if (response.statusCode == 200) {
-      print("Dados Carregados");
-      return json.decode(response.body);
-    } else {
-      print('Erro Ao carregar pagina: ${response.statusCode}');
-      throw Exception('Erro Ao carregar pagina ${response.statusCode}');
-    }
-  } catch (error) {
-    throw Exception('Failed to load data: $error');
+  Future<Funcionarios> insert(Funcionarios funcionario) async {
+    funcionario.ordem = await db?.insert(
+      TABLE_FUNCIONARIOS,
+      funcionario.toJson(),
+    );
+    return funcionario;
   }
 }

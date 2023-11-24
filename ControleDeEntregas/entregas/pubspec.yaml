@@ -41,7 +41,12 @@ dependencies:
   path: ^1.8.3
   path_provider: ^2.1.1
   http: ^1.1.0
-  
+  loading_animation_widget: ^1.2.0+4
+  flutter_barcode_scanner: ^2.0.0
+  get: ^4.6.6
+  flutter_beep: ^1.0.0
+  #camera: ^0.10.5+5
+  camera_camera: ^3.0.0
 
 dev_dependencies:
   flutter_test:
