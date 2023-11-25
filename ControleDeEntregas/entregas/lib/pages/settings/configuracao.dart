@@ -1,5 +1,9 @@
 import 'package:entregas/settings.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:system_info_plus/system_info_plus.dart';
+import 'dart:io';
+import 'dart:async';
 
 class Configuracao extends StatefulWidget {
   const Configuracao({super.key});
@@ -11,6 +15,26 @@ class Configuracao extends StatefulWidget {
 class _ConfiguracaoState extends State<Configuracao> {
   final _newBaseUrl = TextEditingController();
   String? initialValue = "";
+  int _deviceMemory = -1;
+
+  Future<void> initPlatformState() async {
+    int deviceMemory;
+    try {
+      deviceMemory = await SystemInfoPlus.physicalMemory ?? -1;
+    } on PlatformException {
+      deviceMemory = -1;
+    }
+    if (!mounted) return;
+    setState(() {
+      _deviceMemory = deviceMemory;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    initPlatformState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +54,17 @@ class _ConfiguracaoState extends State<Configuracao> {
                   labelText: 'URL Servidor',
                   labelStyle: TextStyle(color: Colors.blue)),
             ),
-            ElevatedButton(onPressed: saveBaseUrl, child: Text('Salvar')),
+            SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: saveBaseUrl,
+              child: Text('Salvar'),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text('Memória total: $_deviceMemory MB'),
           ],
         ),
       ),
@@ -39,6 +73,6 @@ class _ConfiguracaoState extends State<Configuracao> {
 
   void saveBaseUrl() {
     String? newBaseUrl = _newBaseUrl.text;
-    print(newBaseUrl);
+    
   }
 }

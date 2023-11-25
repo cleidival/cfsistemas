@@ -26,6 +26,19 @@ const String CREATE_TABLES_SCRIPT = """
     PRIMARY KEY(id)
   );
 
+  CREATE TABLE configuracao (
+    id	INTEGER,
+    nome	TEXT,
+    valor	TEXT,
+    PRIMARY KEY(id)
+  );
+
+  CREATE TABLE Note(
+    id INTEGER,
+    title TEXT,
+    description TEXT
+  );
+
 """;
 
 const String BASE_URL = "http://192.168.2.220:8082/api/v1";

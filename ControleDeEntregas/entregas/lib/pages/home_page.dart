@@ -1,7 +1,7 @@
 import 'package:entregas/pages/anexos.dart';
 import 'package:entregas/pages/barcode/barcodescan.dart';
 import 'package:entregas/pages/camera/camera.dart';
-import 'package:entregas/pages/configuracao.dart';
+import 'package:entregas/pages/settings/configuracao.dart';
 import 'package:entregas/pages/mensagens.dart';
 import 'package:entregas/pages/cargas/minhas_cargas.dart';
 import 'package:entregas/pages/tarefas/tarefas_finalizadas.dart';
@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
         title: Row(
           children: [
             const Text(
-              'Minha Coleta e Entrega',
+              'Coleta & Entrega',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
