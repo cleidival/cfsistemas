@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1038003398725",
+    "project_id": "cf-gestor-18778",
+    "storage_bucket": "cf-gestor-18778.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1038003398725:android:ca4f57f1c548b91fb2db2c",
+        "android_client_info": {
+          "package_name": "com.cfgestor.entregas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBEIm5mmRUJuow7v0Ve14mwFrBisHsunw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1038003398725:android:d12640d724093729b2db2c",
+        "android_client_info": {
+          "package_name": "com.example.firebase_crud"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBEIm5mmRUJuow7v0Ve14mwFrBisHsunw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

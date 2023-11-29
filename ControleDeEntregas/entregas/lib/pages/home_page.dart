@@ -1,6 +1,8 @@
 import 'package:entregas/pages/anexos.dart';
 import 'package:entregas/pages/barcode/barcodescan.dart';
 import 'package:entregas/pages/camera/camera.dart';
+import 'package:entregas/pages/inventario_ti/inventario.dart';
+import 'package:entregas/pages/maps/maps.dart';
 import 'package:entregas/pages/settings/configuracao.dart';
 import 'package:entregas/pages/mensagens.dart';
 import 'package:entregas/pages/cargas/minhas_cargas.dart';
@@ -22,6 +24,7 @@ class _HomePageState extends State<HomePage> {
   final List _paginas = [
     const MInhasCargas(),
     const Viagens(),
+    const InventarioTiPage(),
     const Mensagens(),
     const Anexos(),
   ];
@@ -113,6 +116,10 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.call_split_sharp),
             label: 'TAREFAS',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.call_split_sharp),
+            label: 'MAPAS',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.chat),
